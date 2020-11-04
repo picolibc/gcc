@@ -1,3 +1,16 @@
+2020-11-04  Keith Packard  <keithp@keithp.com>
+
+	* acinclude.m4: Add GLIBCXX_ENABLE_PURE_STDIO for
+	--enable-libstdcxx-pure-stdio
+	* configure.ac: Use GLIBCXX_ENABLE_PURE_STDIO for
+	--enable-libstdcxx-pure-stdio
+	* configure: regenerate
+	* config.h.in: regenerate
+	* config/io/basic_file_stdio.cc: Add support for
+	_GLIBCXX_USE_PURE_STDIO. This makes libstdc++ use only defined
+	stdio entry points for all I/O operations, without direct calls to
+	underlying POSIX functions.
+
 2020-11-02  Thomas Rodgers  <trodgers@redhat.com>
 
 	* doc/doxygen/user.cfg.in (INPUT): Add new header.

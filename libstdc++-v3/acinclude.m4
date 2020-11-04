@@ -2866,6 +2866,19 @@ AC_DEFUN([GLIBCXX_ENABLE_CSTDIO], [
 
 
 dnl
+dnl Check whether to use 'pure' stdio (no POSIX calls at all)
+dnl
+dnl Default is 'no'
+AC_DEFUN([GLIBCXX_ENABLE_PURE_STDIO], [
+  GLIBCXX_ENABLE(libstdcxx-pure-stdio,$1,,[use only stdio APIs])
+  if test $enable_libstdcxx_pure_stdio = yes; then
+    AC_DEFINE(_GLIBCXX_USE_PURE_STDIO, 1,
+              [Define to restrict code to stdio APIs.])
+  fi
+])
+
+
+dnl
 dnl Check for "unusual" flags to pass to the compiler while building.
 dnl
 dnl --enable-cxx-flags='-foo -bar -baz' is a general method for passing
