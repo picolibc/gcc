@@ -929,6 +929,7 @@ enable_extern_template
 with_python_dir
 enable_werror
 enable_vtable_verify
+enable_libstdcxx_pure_stdio
 enable_libstdcxx_time
 enable_tls
 enable_rpath
@@ -1632,6 +1633,8 @@ Optional Features:
                           enable extern template [default=yes]
   --enable-werror         turns on -Werror [default=no]
   --enable-vtable-verify  enable vtable verify [default=no]
+  --enable-libstdcxx-pure-stdio
+                          use only stdio APIs [default=]
   --enable-libstdcxx-time[=KIND]
                           use KIND for check type [default=auto]
   --enable-tls            Use thread-local storage [default=yes]
@@ -18733,6 +18736,26 @@ else
 fi
 
 
+
+
+   # Check whether --enable-libstdcxx-pure-stdio was given.
+if test "${enable_libstdcxx_pure_stdio+set}" = set; then :
+  enableval=$enable_libstdcxx_pure_stdio;
+      case "$enableval" in
+       yes|no) ;;
+       *) as_fn_error $? "Argument to enable/disable libstdcxx-pure-stdio must be yes or no" "$LINENO" 5 ;;
+      esac
+
+else
+  enable_libstdcxx_pure_stdio=
+fi
+
+
+  if test $enable_libstdcxx_pure_stdio = yes; then
+
+$as_echo "#define _GLIBCXX_USE_PURE_STDIO 1" >>confdefs.h
+
+  fi
 
 
 # Checks for operating systems support that doesn't require linking.

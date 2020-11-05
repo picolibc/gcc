@@ -1018,6 +1018,9 @@
 /* Define if POSIX read/write locks are available in <gthr.h>. */
 #undef _GLIBCXX_USE_PTHREAD_RWLOCK_T
 
+/* Define to restrict code to stdio APIs. */
+#undef _GLIBCXX_USE_PURE_STDIO
+
 /* Define if /dev/random and /dev/urandom are available for the random_device
    of TR1 (Chapter 5.1). */
 #undef _GLIBCXX_USE_RANDOM_TR1
